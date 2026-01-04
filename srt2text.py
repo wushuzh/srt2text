@@ -68,10 +68,10 @@ for file in subtitle_files:
             # or space between subtitle timing block  ==> write line to text file
             elif just_read_interval:
                 # if special options chose, current line will not start new line at end
-                if arguments_parsed.all_in_one_line or arguments_parsed.interval_in_one_line and not line in '\n': 
+                if arguments_parsed.all_in_one_line or arguments_parsed.interval_in_one_line and not line in '\n':
                     output_line = line.replace('\n', '', 1)
-                    # if one line needed, current text is positioned a space away from previous text 
-                    if arguments_parsed.all_in_one_line:
+                    # if one line needed, current text is positioned a space away from previous text
+                    if arguments_parsed.all_in_one_line or arguments_parsed.interval_in_one_line:
                         output_line = (" %s" % output_line)
                 else:
                     output_line = line
